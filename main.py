@@ -4,7 +4,7 @@
 Draws a single perfect ripe strawberry with dew drops on a dark
 background, procedurally with PIL only. Fully deterministic: no
 randomness, no network, no timestamps. Writes /output/entry.png
-(1024x1024, <= 1 MiB) and ./entry.png for reference.
+(1024x1024, <= 1 MiB).
 
 Run:  python3 main.py
 """
@@ -262,7 +262,6 @@ def main():
     img = bg.convert("RGB").resize((W, H), Image.LANCZOS)
     os.makedirs("/output", exist_ok=True)
     img.save(OUT, format="PNG", optimize=True)
-    img.save("entry.png", format="PNG", optimize=True)
     print(f"wrote {OUT} {img.size} ")
 
 
